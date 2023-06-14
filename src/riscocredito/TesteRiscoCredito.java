@@ -34,7 +34,7 @@ public class TesteRiscoCredito {
                 JFuzzyChart.get().chart(functionBlock);
 
     // escolhe entradas
-                String renda = JOptionPane.showInputDialog("Digite o valor da renda? (R$ 1000,00 a R$ 10000,00):");
+                String renda = JOptionPane.showInputDialog("Digite o valor da sua renda? (R$ 1000,00 a R$ 10000,00):");
     functionBlock.setVariable("renda", Integer.parseInt(renda));
                 
                 String mesesAtraso = JOptionPane.showInputDialog("Digite o tempo médio de atraso de pagamento do cliente (0 a 9 meses):");
@@ -55,16 +55,9 @@ public class TesteRiscoCredito {
 
     // Imprime as regras no console
     System.out.println(functionBlock);
-// Assuming the value is a double or float
     double riscoValue = functionBlock.getVariable("risco").getValue();
-
-    // Create a decimal formatter with two decimal places
     DecimalFormat decimalFormat = new DecimalFormat("#0.00");
-
-    // Format the riscoValue with two decimal places
     String formattedRisco = decimalFormat.format(riscoValue);
-
-    // Create the modified string with the formatted value
     String texto = "O risco de crédito é " + formattedRisco + "%";
     JOptionPane.showMessageDialog(null, texto);
                 
